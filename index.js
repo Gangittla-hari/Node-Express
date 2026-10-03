@@ -7,25 +7,10 @@ app.listen(port, () => {
     console.log(`app is listening on port ${port}` );
 });
 
-app.get("/", (req, res) => {
-    res.send("you contacted root path");
-});
 
-app.get("/apple", (req, res) => {
-    res.send("you contacted apple path");
+app.use((req, res) => {
+    // console.log(req);
+    console.log("Request received");
+    let code = "<h1>Fruit</h1> <ul><li>apple</li><li>orange</li></ul>";
+    res.send(code);
 });
-
-app.get("/orange", (req, res) => {
-    res.send("you contacted orange path");
-});
-
-app.get("/*splat", (req, res) => {
-    res.send("Page not found");
-});
-
-// app.use((req, res) => {
-//     // console.log(req);
-//     console.log("Request received");
-//     let code = "<h1>Fruit</h1> <ul><li>apple</li><li>orange</li></ul>";
-//     res.send(code);
-// });

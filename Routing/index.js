@@ -8,9 +8,8 @@ app.listen(port, () => {
 });
 
 app.get("/", (req, res) => {
-    res.send("you connected to root path");
+    res.send("hello, i'm root");
 });
-
 
 app.get("/apple", (req, res) => {
     res.send("you connected to apple path");
@@ -23,7 +22,6 @@ app.get("/orange", (req, res) => {
 app.get("/*splat", (req, res) => {
     res.send("Page not found");
 });
-
 
 // app.use((req, res) => {
 //     // console.log(req);
